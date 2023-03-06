@@ -1,0 +1,2 @@
+# this is installed only in the development project (development dependencyes)
+flake8>=3.9.2,<=3.10
