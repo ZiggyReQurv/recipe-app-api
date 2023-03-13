@@ -16,9 +16,12 @@ class UserManager(BaseUserManager):
         """Create, save and return a new user"""
         if not email:
             raise ValueError('Users must have an email address!')
-        user = self.model(email=self.normalize_email(email), **extra_fields)  # self.module for access the module creted
-        user.set_password(password)  # set_password method to encypt the password
-        user.save(using=self._db)  # self.df to supoprt multiple db
+        # self.module for access the module created
+        user = self.model(email=self.normalize_email(email), **extra_fields)
+        # set_password method to encypt the password
+        user.set_password(password)
+        # self.df to supoprt multiple db
+        user.save(using=self._db)
 
         return user
 
